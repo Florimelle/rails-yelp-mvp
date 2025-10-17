@@ -2,8 +2,7 @@ class ReviewsController < ApplicationController
   before_action :set_restaurant, only: %i[new create]
 
   def new
-    @review = Review.find(params[:restaurant_id])
-    @review = Review.new
+    @review = Review.new(restaurant: @restaurant)
   end
 
   def create
